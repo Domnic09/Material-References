@@ -1,0 +1,440 @@
+/* the element holds everything */
+html{
+    font-size: 62.5%;
+}
+/*
+when checking the font size in the figma for instance the H1 part, look for text part then there will be for instance "regular 52" then
+with the given size in figma convert it move the decimal point to one decimal place, then it will show as 52 = 5.2 rem
+this will accurately measure and apply it to the css
+*/
+
+/* this tag responsible for the like background color of the website */
+body{
+    margin: 0;
+    /* take note since in the main section there is variety of fonts apply this part as main font */
+    /* go to fonts.google.com */
+    font-family: 'Poppins';
+}
+
+/* in this part consider the margin of the hero section  */
+/* in order to identify the max-width measure the hero section content
+with a rectangle then see the measurement width value which is around 1160-1255 or more*/
+.wrapper{
+    /* the deskstop size, given that all contents positioned to the left*/
+    max-width: 1200px;
+    /* then add margin auto 0  in order to align or center the content*/
+    margin: 0 auto;
+}
+
+/* Navbar */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    /* align items to the vertical center, its like applying margin,  */
+    /* this ensures the elements centers the flexbox container */
+    align-items: center;
+}
+
+nav {
+   margin: 4em;  /*  gives margin to the navbar */
+   font-size: 3em;
+}
+
+nav ul{
+    list-style-type: none;
+    display: flex;
+    /* in this part check the spacing in figma navbar,
+    by clicking the inbetween items then alt key and then found out the padding in between
+    is 36 then means 3.6 em move decimal by 1
+    */
+    gap: 3.6em;
+
+    /* and then since the browser by default providing a ul margin oranges spaces by checking the console
+    , these are such as 1em values corresponding properties,
+    then make RESET the MARGINS as it called so margin 0
+    so that the oranges space margin will remove provided by browser by default.
+    */
+
+    margin: 0;
+
+}
+
+/* why rem instead em,
+rem is for font-size (Root Em Unit) means tied to the html font size
+em is for scaling like distance margin, padding, border radius,
+
+*/
+
+nav ul li a {
+    text-decoration: none;  /*no underlines */
+    color: black;
+    text-transform: uppercase;
+    font-size: 1.6rem ;
+    /* the parent position must be relative,
+    this position is relative based on its parent container
+    */
+    position: relative;
+}
+ /* implement sudo selector before and after */
+
+nav ul li a.active:before{
+    position: absolute;
+    content: "";
+    /* add the size of the indicator */
+    width: 35%;
+    height: 1px;
+    border-bottom: 2px solid black;
+    bottom: -6px;
+}
+
+nav ul li a:before{
+    /* copy from above */
+    position: absolute;
+    content: "";
+    /* add the size of the indicator */
+    width: 0%;
+    height: 1px;
+    border-bottom: 2px solid black;
+    bottom: -6px;
+    transition: width .3s;
+}
+
+/* Hero Section */
+
+main{
+    display: flex;
+    gap: 13.1rem;
+    margin-top: 12.3rem;
+    margin: 0;
+}
+
+.left-col{
+    /* it means that the it occupies the 45 percent space in the
+    main container */
+    width: 45%;
+    /* then another space for the right col */
+}
+.right-col{
+    /* the implementation of flex-grow-1 will provide the right-col class a space */
+    flex-grow: 1;
+    /* the default behavior of flexbox is going to occupy the amount of width
+    it needs based on the content inside of it */
+}
+
+h1{
+    font-size: 5.2rem;
+    font-family: 'Playfair Display';
+    font-weight: normal;
+    /* after implementing the 3 properities, then
+    it will show a excess margin in h1 which provided by the computer
+    by default so, implement margin: 0
+    */
+    margin: 0;
+}
+.subhead{
+    font-size: 1.8rem;
+}
+
+.cta-btns{
+    /* implement margin top and bottom 5em and 0 left and right */
+    margin: 5em 0;
+}
+
+.cta-btns, .seconday-cta{
+    display: flex;
+    gap: 3.8rem;
+}
+
+.primary-cta{
+    background-color: #f1e2d1;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    border-radius: 1.4em;
+    /* padding of top bottom, left right */
+    padding: 1em 2em;
+}
+
+.secondary-cta{
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: black;
+    display: block; /*this ensures that the words dont wrap  */
+    padding: 1em 0;
+    /* align-items: center; */
+
+}
+
+
+
+.secondary-cta svg{
+     width: 20px; /* use 20px for icons since it is use for small items */
+     transition: transform .3s;
+}
+
+.news {
+    display: flex;
+    gap: 5.3em;
+    padding: 4.6em;
+    border: 1px solid red;
+    border-radius: 2.3em;
+    position: relative; /*for confeti graphic to add */
+}
+
+.news:before{
+    position: absolute;
+    content: "";
+    background: url('../images/confetti.svg');
+    width: 100px;
+    height: 100px;
+    /* since it is not in desired position */
+    /* implement top -40 means above the news element */
+    top: -20px;
+    left: -20px;
+    z-index: 2; /* this value to make equal the top and left equal */
+}
+
+p.employees{
+    font-size: 3.3em;
+    margin: 0;
+    font-weight: 300;
+    line-height: 100%;
+}
+
+p.details{
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+
+/* organize things in vertical and horizontal then implement grid */
+
+/* Right Column Gallery */
+
+.right-col{
+    display: grid;
+    gap: 2.3em;
+    /* means they have the same width */
+    /* grid-template-columns: auto auto; */
+    grid-template-columns: repeat(2, auto);
+    grid-template-areas:
+        /* base on the card measurement placement */
+          /* "left right"  */
+        /* reason why the placement of left, right, bottom is due to figma  */
+          /* "left bottom"  */
+        /* or */
+        "left ."
+        "left .";
+    }
+.card{
+    /* background-color: grey; */
+    border-radius: 1.9em;
+    padding: 1.1em;
+    display: flex;
+    align-items: end;
+    background-size: 150%;
+    object-fit: cover;
+
+    /* for the image animation */
+    transition: background-size 800ms;
+
+}
+
+.card1 {
+    grid-area: left;
+    background-image: url('../images/clothing1.jpg');
+    position: relative;
+}
+.card1:before{
+    position: absolute;
+    content: "";
+    background: url('../images/tag.svg') no-repeat;
+    width: 100%;
+    height: 100%;
+    top: -35px;
+    left: -73px;
+    pointer-events: none; /* it should have no affect the cursor at all due svg above */
+
+}
+.card2 {
+    background-image: url('../images/clothing2.jpg');
+}
+.card3 {
+    background-image: url('../images/clothing3.jpg');
+}
+
+.card-details{
+    background-color: white;
+    border-radius: 1.0em;
+    padding: 1.7em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    /* for the hover transition */
+    transition: transform 800ms;
+}
+
+.card-details a{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
+.card-details p{
+    font-size: 1.4rem;
+    margin: 0;
+}
+p.product-price{
+    font-size: 1.8em;
+}
+
+/* Micro Interactions / Animations */
+
+nav ul li a:hover:before{
+    width: 35%;
+}
+
+.primary-cta:hover{
+    background: #e2d1bd;
+}
+.secondary-cta:hover svg{
+    /* means translate x horizontal axis */
+    transform: translateX(10px);
+}
+.secondary-cta:hover{
+    text-decoration:underline;
+}
+
+/* Animation in Images */
+
+.card:hover{
+    background-size: 160%;
+}
+
+/* when the card is hovered then change card details transition */
+.card:hover .card-details{
+    /* transform to translate y to -20px which moves upwards */
+    transform: translateY(-20px);
+
+}
+
+/* transition when a user visit website */
+/* intro animation */
+.overlay{
+    /* this position absolute will consume lay over the top of everything intially */
+    position: absolute;
+    /* this will be executed in the top which is the z index */
+    z-index: 999;
+    background: white;
+    width: 100%;
+    height: 100%;
+    /* after implementing the above properties it will turn the webpage white */
+
+    /* this which will reveal the animation */
+    animation: reveal 1s ease-in forwards;
+
+    /* forwards declared cuz we dont want to reset itself */
+
+    /* ease in, ease out, cubic-bezeir etc. for animation */
+
+    /* since the key frames reveal implemented then you can change the transition through */
+    transform-origin: bottom;
+    /* this will start up til the bottom */
+}
+
+/* implement key frames reveal */
+@keyframes reveal {
+    from{
+        transform: scaleY(1);
+    }
+    to{
+        transform: scaleY(0);
+    }
+}
+
+/* implement a transition in the images that will grows in */
+
+
+/* what consumes the wraps the
+ left column and right column classes its main */
+
+ main{
+    animation: growIn 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+    transform: scale(.4);
+ }
+
+ /* for animation grow ins */
+
+ @keyframes growIn{
+    /* we will not use from since the default is the target mean after the transition */
+    to{
+        transform: scale(1);
+    }
+ }
+
+ /* next implementation is to make this responsive using screen entities*/
+
+ @media screen and (max-width: 830px){
+    
+ }
+
+ /* Check the screen size */
+ body {
+    margin-top: 40px; /* This margin just makes the text easier to read. You can remove it if you want since it can mess with your other styles. */
+  }
+  
+  body::before {
+    content: "XS";
+    color: red;
+    font-size: 2rem;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+  
+  /* This box class is purely used for explaining how the bootstrap grid system works. */
+  .box {
+    background-color: lightblue;
+    border: 1px solid blue;
+    min-height: 50px;
+    font-size: 2rem;
+  }
+  
+  @media (min-width: 576px) {
+    body::before {
+      content: "SM";
+    }
+  }
+  
+  @media (min-width: 768px) {
+    body::before {
+      content: "MD";
+    }
+  }
+  
+  @media (min-width: 830px) {
+    body::before {
+      content: "LG here";
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    body::before {
+      content: "XL";
+    }
+  }
+  
+  @media (min-width: 1400px) {
+    body::before {
+      content: "XXL";
+    }
+  }
+
+  /* ends here */
+  

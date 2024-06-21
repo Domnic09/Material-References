@@ -1,0 +1,89 @@
+@import "../../vars.css";
+
+.container{
+    position: relative;
+    background-color: rgba(12, 12, 12, 0.6);
+    border-radius: 15px;
+    padding: 73px;
+    margin-top: 120px;
+    z-index: 1;
+    margin-left: 10%;
+    margin-right: 10%;
+    /* margin-bottom: 10%; */
+}
+.title{
+    color: var(--colors-text);
+    font-size: 35px;
+    font-weight: 700;
+    letter-spacing: 1.75px;
+    text-transform: uppercase;
+}
+
+.content{
+    display: flex ;
+    flex-direction: row;
+    align-items: center;
+    
+}
+.aboutImage{
+    width: 35%;
+
+}
+.aboutItems{
+    color: var(--colors-text);
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.aboutItem{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 20px;
+    list-style: none;
+    padding: 25px;
+    /* 90deg means horizontal, rgba 0.42 opacity 0% into the element */
+    background-image: linear-gradient(90deg, rgba(165, 215, 232, 0.42) 0%, rgba(255,255,255,0) 100%);
+    /* make it onlly visible when hovering,set the bg size */
+    background-size: 0 100%;
+    /* an animation where it flows from left to right side */
+    background-repeat: no-repeat;
+    /* transitions happens here */
+    transition: 0.4s;
+}
+
+
+.aboutItem:hover{
+    background-size: 100% 100%;
+}
+
+.aboutItem h3{
+    font-size: 25px;
+    font-weight: 600;
+}
+.aboutItem p{
+    font-size: 25px;
+}
+
+/* we need to have responsive elements so implement media query */
+
+@media screen and (max-width: 830px){
+    .container{
+        background-color: transparent;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .content{
+        flex-direction: column;
+    }
+    .aboutImage {
+        display: none;
+    }
+    .aboutItems{
+        margin-top: 29px;
+    }
+    .aboutItem{
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

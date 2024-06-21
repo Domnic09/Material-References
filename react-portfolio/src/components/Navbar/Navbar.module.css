@@ -1,0 +1,88 @@
+@import "../../vars.css";
+
+.navbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 61px;
+    z-index: 2;
+    /* this is for floating elements */
+    margin: 0 10%;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--colors-text);
+}
+
+.menu {
+    display: flex;
+
+}
+
+.menuItems {
+    display: flex;
+    gap: 47px;
+    list-style: none;
+}
+
+.menuItems a {
+    font-size: 25px;
+    color: var(--colors-text);
+    text-decoration: none;
+}
+
+
+/* make website responsive is through using media queries */
+/* giving different styles of the classes base on the width of the screen */
+/* render out the list created in the navbar */
+/* when the width is below certain amount of pixels */
+
+@media screen and (max-width: 830px) {
+
+    /* the navbar will indicate here to 
+   make effective responsiveness of the screen */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu {
+        /* the reason why absolute due to the content screen is above everything else  */
+        position: absolute;
+        right: 0;
+        margin-right: 10%;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 11px;
+        z-index: 3;
+    }
+
+    .menuBtn {
+        display: block;
+        cursor: pointer;
+
+    }
+
+    .menuItems {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 13px;
+        border-radius: 10px;
+        background: rgb(25, 55, 109);
+        background: linear-gradient(0deg, rgba(25, 55, 109, 0.2) 0%, rgb(25, 55, 109, 1) 100%);
+        /* 0 degress mean vertical, rgba starting value() with 0% of the gradient, same goes to 100% gradient texture */
+        padding: 24px 33px;
+        box-shadow: 0 0 4px 0 rbga(0,0,0,0.25);
+        /* 0 and 0 for horizontal and vertical, then 4px blur */
+    }
+    .menuOpen{
+        display: flex;
+        z-index: 1;
+    }
+    
+}
