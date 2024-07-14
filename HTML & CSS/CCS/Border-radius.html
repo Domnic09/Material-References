@@ -9,12 +9,26 @@
       * {
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
+        border: 5px solid red;
       }
-      a {
-        width: 50px;
-        height: 30px;
-        margin: 50px 0 0 50px;
-        padding: 5px;
+      body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 100vh;
+        min-height: 100vh;
+        width: 100%;
+        background-color: pink;
+        /* flex-direction: column; */
+        border: 5px solid red;
+      }
+      .home{
+        width: 100px;
+        height: 50px;
+        margin: 5px 0px 0px 0px;
+        padding: 100px;
+        justify-content: center;
         border: 3px solid greenyellow;
         text-decoration: none;
         color: rgb(194, 15, 15);
@@ -22,15 +36,32 @@
         background-color: blue;
         border-radius: 10px 20px 30px 40px;
         transition: 0.5s;
+        transform:  translateX(-10%);
+        top: 100%;
       }
-      a:hover {
+      .home:hover {
         background-color: brown;
         color: chartreuse;
         border: 3px solid pink;
       }
+      .office{
+        background-color: violet;
+        margin: 40px 20px 30px 40px;
+        border: 5px solid red;
+        border-top-left-radius: 20%;
+        padding: 50px;
+        /* top: 50%; */
+        /* left: 50%; */
+        transition: 0.10s;
+      }
+      .office:hover{
+        background-color: yellow;
+        border: 5px double brown;
+      }
     </style>
   </head>
   <body>
-    <a href="">home</a>
+    <a href="" class="home">home</a>
+    <a href="" class="office">office</a>
   </body>
 </html>
