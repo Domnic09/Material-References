@@ -9,7 +9,8 @@
         *{
             margin: 0px;
             padding: 0px;
-
+            
+            outline: 5px solid green;
         }
         /* div p{
             color: fuchsia;
@@ -23,9 +24,24 @@
         /* div + h1{
             color: rgb(50, 99, 205);
         } */
+         div{
+            border: 5px solid green;
+         }
         div ~ h1{
             color: rgb(94, 205, 50);
             background: linear-gradient(to left, #000 10%, #e34 90%);
+        }
+        div ul li:first-child:hover{
+            color: red;
+            background-color: aqua;
+        }
+        /* div ul li:nth-child(2):hover{ */
+        div ul li:nth-child(n):hover{
+            color: red;
+            background-color: aqua;
+        }
+        div ul li:last-child:hover{
+            color: purple;
         }
     </style>
 </head>
@@ -47,6 +63,15 @@
     <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus commodi est nemo laudantium sed, minus omnis aperiam! At doloribus dignissimos aliquid, aliquam incidunt, voluptas ab temporibus iusto impedit provident laboriosam.
     </p>
+
+    <ul>
+        <li>first</li>
+        <li>second</li>
+        <li>third</li>
+        <li>fourth</li>
+        <li>fifth</li>
+        <li>sixth</li>
+    </ul>
 </div>
 <h1 class="">java</h1>
 <h1>script</h1>
