@@ -5,7 +5,7 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
   /* to hide the overflowing width */
-  overflow: hidden;
+  /* overflow: hidden; */
   
 
 }
@@ -19,7 +19,7 @@
   position: relative;
 }
 .hero-wrapper {
-  color: #fff;
+  color: #020101;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -103,6 +103,8 @@
   margin-right: auto;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+
+
 }
 
 /* 2xl */
