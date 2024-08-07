@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+    
+    // function object(){
+      var a = {
+        name: "Ben",
+        lname: "joe",
+        age: 30,
+        email: "someonegmail.com",
+        movies: ["Endgame", " Spiderman", "Dhoom"],
+        income: function () {
+          return 25000;
+        },
+        FUN: function () {
+          return this.name + " " + this.lname;
+        },
+      };
+      b = a.lname;
+      document.write(a.movies);
+      console.log(b);
+      var first = new Object();
+      first.firstname = "Muneeb";
+      first.lastname = "sajjad";
+      first.age = 24;
+      document.write(first.age);
+      document.write(a.FUN)
+    // }
+      // document.write(object.a.age);
+    </script>
+  </body>
+</html>
